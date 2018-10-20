@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 5px;
+    height: 100vh;
+    width: 100vw;
+    background-color: pink;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    position: relative;
+    height: 89vh;
+}
+
+header {
+    background: #fff;
+    padding: 10px;
+    display: flex;
+    border-bottom: 8px solid pink;
+}
+
+canvas {
+    background: #fff;
+}
+
+#button button {
+    width: 60px;
+    cursor: pointer;
+}
+
+#button.active #pen {
+    display: inline-block;
+}
+
+#button.active #eraser {
+    display: none;
+}
+
+#button #pen {
+    display: none;
+}
+
+.clearfix {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#colorBox {
+    margin-left: 10px;
+}
+
+#colorBox .color {
+    float: left;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    margin: 3px;
+    box-shadow: 0 0 0px 1px #969494;
+    cursor: pointer;
+}
