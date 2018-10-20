@@ -28,15 +28,15 @@ canvas {
     cursor: pointer;
 }
 
-#button.active #pen {
+#button.active #eraser {
     display: inline-block;
 }
 
-#button.active #eraser {
+#button.active #pen {
     display: none;
 }
 
-#button #pen {
+#button #eraser {
     display: none;
 }
 
