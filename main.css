@@ -86,7 +86,7 @@ canvas {
     text-indent: 10px;
 }
 
-#clear {
+.simpleIcon {
     width: 2em;
     height: 2em;
     color: #777;

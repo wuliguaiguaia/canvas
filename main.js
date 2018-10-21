@@ -1,9 +1,13 @@
 /*TODO
- * 1.改变窗口画布内容不变
- * 2.自定义鼠标
- * 
- */
+* 1.改变窗口画布内容不变
+* 2.自定义鼠标
+*/
 
+/*说明
+*
+* 快捷选择线宽打开画笔， 同时关闭橡皮擦
+*
+*/  
 
 // 1.初始化 
 let cxt = canvas.getContext('2d'),
@@ -20,6 +24,8 @@ let cxt = canvas.getContext('2d'),
     newPen = pen.cloneNode(true),
     newEraser = eraser.cloneNode(true);
 let size = resize();
+cxt.fillStyle = "#fff";
+cxt.fillRect(0,0,canvas.width,canvas.height);
 createColor(); //创建颜色
 customDefine();//用户自定义
 // 2.画图
@@ -50,8 +56,11 @@ function customDefine(){
         clearActive(this);
         clearActive(quickEraserConfig)
         e.target.classList.add("active");
+
         paintFlag = true;
         eraser.classList.remove("active");
+        pen.classList.add("active");
+        
     }
 
     quickEraserConfig.onclick = function (e) {
@@ -60,8 +69,10 @@ function customDefine(){
         clearActive(this);
         clearActive(quickLineConfig)
         e.target.classList.add("active");
+
         paintFlag = false;
         eraser.classList.add("active");
+        pen.classList.remove("active");
     };
 }
 
@@ -87,6 +98,8 @@ function listenUser() {
                 color = e.target.dataColor;
                 pen.style.color = color;
             }
+        }else{
+            alert("请选择画笔工具")
         }
     }
 
@@ -102,10 +115,18 @@ function listenUser() {
         }
     };
 
-
     // 清空
-    clear.onclick = function () {
-        clearCanvas(0, 0, size.W, size.H);
+    clearCanvas.onclick = function () {
+        cxt.clearRect(0, 0, canvas.width, canvas.height)
+    }
+
+    // 保存
+    saveCanvas.onclick = function(){
+        let url = canvas.toDataURL("image/png");
+        let a = document.createElement("a");
+        a.href = url;
+        a.download = "paint";
+        a.click();
     }
 }
 
@@ -116,10 +137,6 @@ function drawLine(x1, y1, x2, y2, color, lineWidth) {
     cxt.lineWidth = lineWidth;
     cxt.strokeStyle = color;
     cxt.stroke();
-}
-
-function clearCanvas(x, y, w, h) {
-    cxt.clearRect(x, y, w, h)
 }
 
 function createColor() {
@@ -164,7 +181,7 @@ function canvasDrawing() {
         using = true;
         x1 = e.clientX - diff.x;
         y1 = e.clientY - diff.y;
-        clearCanvas(x1, y1, eraserRect, eraserRect);
+        cxt.clearRect(x1, y1, eraserRect, eraserRect);
 
         // newPen.style.left = e.clientX + 'px';
         // newPen.style.top = e.clientY + 'px';
@@ -182,7 +199,7 @@ function canvasDrawing() {
                 y1 = y2;
 
             } else {
-                clearCanvas(x2, y2, eraserRect, eraserRect)
+                cxt.clearRect(x2, y2, eraserRect, eraserRect)
             }
         }
 

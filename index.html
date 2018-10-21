@@ -7,19 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
-    <script src="//at.alicdn.com/t/font_882566_lhhxqr7efr8.js"></script>
+    <script src="//at.alicdn.com/t/font_882566_6kyrbtpagg.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <header>
             <div id="button" class=" ">
-                <svg id="pen" class="icon active" aria-hidden="true">
-                    <use xlink:href="#icon-Pen"></use>
-                </svg>
-                <svg id="eraser" class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-eraser"></use>
-                </svg>
+                <div title="画笔">
+                    <svg id="pen" class="icon active" aria-hidden="true" >
+                        <use xlink:href="#icon-Pen"></use>
+                    </svg>
+                </div>
+                <div title="橡皮擦">
+                    <svg id="eraser" class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-eraser"></use>
+                    </svg>
+                </div>
             </div>
             <div class="divide"></div>
             <div class="control">
@@ -34,9 +38,15 @@
                 </label>
             </div>
             <div class="divide"></div>
-            <div class="control">
-                <svg id="clear" class="icon" aria-hidden="true">
+            <div class="control" title='清空'>
+                <svg id="clearCanvas" class="icon simpleIcon" aria-hidden="true">
                     <use xlink:href="#icon-cc-delete"></use>
+                </svg>
+            </div>
+            <div class="divide"></div>
+            <div class="control" title='保存'>
+                <svg id="saveCanvas" class="icon simpleIcon" aria-hidden="true">
+                    <use xlink:href="#icon-download"></use>
                 </svg>
             </div>
         </header>
