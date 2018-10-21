@@ -1,13 +1,13 @@
 /*TODO
-* 1.改变窗口画布内容不变
-* 2.自定义鼠标
-*/
+ * 1.改变窗口画布内容不变
+ * 2.自定义鼠标
+ */
 
 /*说明
-*
-* 快捷选择线宽打开画笔， 同时关闭橡皮擦
-*
-*/  
+ *
+ * 快捷选择线宽打开画笔， 同时关闭橡皮擦
+ *
+ */
 
 // 1.初始化 
 let cxt = canvas.getContext('2d'),
@@ -25,9 +25,9 @@ let cxt = canvas.getContext('2d'),
     newEraser = eraser.cloneNode(true);
 let size = resize();
 cxt.fillStyle = "#fff";
-cxt.fillRect(0,0,canvas.width,canvas.height);
+cxt.fillRect(0, 0, canvas.width, canvas.height);
 createColor(); //创建颜色
-customDefine();//用户自定义
+customDefine(); //用户自定义
 // 2.画图
 canvasDrawing();
 // 3.监听事件
@@ -41,7 +41,7 @@ listenUser();
 
 
 
-function customDefine(){
+function customDefine() {
     lineConfig.oninput = function (e) {
         lineWidth = e.target.value;
         clearActive(quickLineConfig)
@@ -60,7 +60,7 @@ function customDefine(){
         paintFlag = true;
         eraser.classList.remove("active");
         pen.classList.add("active");
-        
+
     }
 
     quickEraserConfig.onclick = function (e) {
@@ -76,7 +76,7 @@ function customDefine(){
     };
 }
 
-function clearActive(ele){
+function clearActive(ele) {
     [...ele.children].forEach(item => {
         item.classList.remove("active")
     })
@@ -98,7 +98,7 @@ function listenUser() {
                 color = e.target.dataColor;
                 pen.style.color = color;
             }
-        }else{
+        } else {
             alert("请选择画笔工具")
         }
     }
@@ -121,7 +121,7 @@ function listenUser() {
     }
 
     // 保存
-    saveCanvas.onclick = function(){
+    saveCanvas.onclick = function () {
         let url = canvas.toDataURL("image/png");
         let a = document.createElement("a");
         a.href = url;
@@ -211,4 +211,3 @@ function canvasDrawing() {
         using = false;
     }
 }
-
