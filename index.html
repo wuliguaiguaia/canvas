@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
-    <script src="//at.alicdn.com/t/font_882566_djb8hd9d9wi.js"></script>
+    <script src="//at.alicdn.com/t/font_882566_lhhxqr7efr8.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <header>
-            <div id="button" class="">
+            <div id="button" class=" ">
                 <svg id="pen" class="icon active" aria-hidden="true">
                     <use xlink:href="#icon-Pen"></use>
                 </svg>
@@ -23,19 +23,37 @@
             </div>
             <div class="divide"></div>
             <div class="control">
-                <label for="lineConfig" >
-                    线宽 <input id="lineConfig" type="number" value="5"> px
+                <label for="lineConfig">
+                    线宽<br> <input id="lineConfig" type="number" value="5"> px
                 </label>
             </div>
             <div class="divide"></div>
             <div class="control">
-                <label for="wipeConfig" >
-                    橡皮擦大小 <input id="wipeConfig" type="number" value="5"> px
+                <label for="wipeConfig">
+                    橡皮擦大小<br><input id="wipeConfig" type="number" value="5"> px
                 </label>
             </div>
+            <div class="divide"></div>
+            <div class="control">
+                <svg id="clear" class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-cc-delete"></use>
+                </svg>
+            </div>
         </header>
-        <main>
+        <main id="main">
             <div id="colorBox"></div>
+            <div id="quickLineConfig" class="quickConfig">
+                <div class="thin" data-line=1></div>
+                <div class="middle" data-line=3></div>
+                <div class="thick" data-line=7></div>
+                <div>线宽</div>
+            </div>
+            <div id="quickEraserConfig"class="quickConfig">
+                <div class="thin" data-eraser=5></div>
+                <div class="middle" data-eraser=10></div>
+                <div class="thick" data-eraser=15></div>
+                <div>橡皮擦</div>
+            </div>
             <canvas id="canvas">
             </canvas>
         </main>
