@@ -2,7 +2,6 @@ body {
     margin: 0;
     height: 100vh;
     width: 100vw;
-    background-color: #ffc1cc75;
     box-sizing: border-box;
     font-size: 14px;
     color: #444;
@@ -25,11 +24,13 @@ header {
     display: flex;
     align-items: center;
     padding: 2px;
+    background: #ffc1cc75;
 }
 
 canvas {
     background: #fff;
     cursor: none;
+    /* invalid */
     cursor: url("./img/Pen.png"), pointer;
 }
 
