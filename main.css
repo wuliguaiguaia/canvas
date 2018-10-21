@@ -7,6 +7,14 @@ body {
     box-sizing: border-box;
 }
 
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
 .wrapper {
     position: relative;
     height: 89vh;
@@ -14,31 +22,59 @@ body {
 
 header {
     background: #fff;
-    padding: 10px;
     display: flex;
     border-bottom: 8px solid pink;
+    align-items: center;
+    font-size: 14px;
 }
 
 canvas {
     background: #fff;
 }
 
-#button button {
-    width: 60px;
+#button .icon {
     cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+    color: #807d7d;
+    transition: transform .3s;
 }
 
-#button.active #eraser {
-    display: inline-block;
+#button {
+    display: flex;
+    padding: 15px;
+}
+#pen{
+    margin-right: 10px;
+}
+#pen.active {
+    transform: scale(1.2);
 }
 
-#button.active #pen {
-    display: none;
+#eraser.active {
+    transform: scale(1.5);
+    color: #121f1f
 }
 
-#button #eraser {
-    display: none;
+
+.divide {
+    width: 1px;
+    height: 30px;
+    background: #9a9999;
+    margin: 0 10px;
 }
+
+.control{
+}
+
+.control input{
+    width: 50px;
+    border: 1px solid #a9a5a5;
+    vertical-align: text-top;
+    height: 18px;
+    text-indent: 10px;
+}
+
 
 .clearfix {
     content: "";
@@ -47,15 +83,16 @@ canvas {
 }
 
 #colorBox {
-    margin-left: 10px;
+    position: absolute;
+    left: 0;
 }
 
 #colorBox .color {
-    float: left;
     width: 20px;
     height: 20px;
     border: 1px solid #fff;
-    margin: 3px;
+    margin: 6px;
     box-shadow: 0 0 0px 1px #969494;
     cursor: pointer;
+    display: block;
 }

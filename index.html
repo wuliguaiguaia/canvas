@@ -7,19 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
+    <script src="//at.alicdn.com/t/font_882566_djb8hd9d9wi.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <header>
-            <!-- active 显示画笔 -->
-            <div id="button" class="active">
-                <button id="pen">画笔</button>
-                <button id="eraser">橡皮擦</button>
+            <div id="button" class="">
+                <svg id="pen" class="icon active" aria-hidden="true">
+                    <use xlink:href="#icon-Pen"></use>
+                </svg>
+                <svg id="eraser" class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-eraser"></use>
+                </svg>
             </div>
-            <div id="colorBox" class="clearfix"></div>
+            <div class="divide"></div>
+            <div class="control">
+                <label for="lineConfig" >
+                    线宽 <input id="lineConfig" type="number" value="5"> px
+                </label>
+            </div>
+            <div class="divide"></div>
+            <div class="control">
+                <label for="wipeConfig" >
+                    橡皮擦大小 <input id="wipeConfig" type="number" value="5"> px
+                </label>
+            </div>
         </header>
-        <canvas id="canvas"></canvas>
+        <main>
+            <div id="colorBox"></div>
+            <canvas id="canvas">
+            </canvas>
+        </main>
     </div>
     <script src="./main.js"></script>
 </body>
